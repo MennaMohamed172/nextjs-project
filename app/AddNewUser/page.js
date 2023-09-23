@@ -14,6 +14,22 @@ const Form = () => {
 
   const handleFormSubmit = (values) => {
     console.log(values);
+    axios.post('https://finallydashboard.onrender.com/user', {
+      UserName: 'Shrouk12',
+      FirstName: 'Shrouk',
+      LastName:"Mohamed",
+      Email:"Shrouk@gmail.com",
+      Password:"Shrouk$12345",
+      Website:""
+      
+  
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   };
 
   return (
@@ -49,10 +65,10 @@ const Form = () => {
                 label="UserName"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.userName}
-                name="userName"
-                error={!!touched.userName && !!errors.userName}
-                helperText={touched.userName && errors.userName}
+                value={values.UserName}
+                name="UserName"
+                error={!!touched.UserName && !!errors.UserName}
+                helperText={touched.UserName && errors.UserName}
                 sx={{ gridColumn: "span 4" }}
               />
               <TextField
@@ -62,10 +78,10 @@ const Form = () => {
                 label="First Name"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.firstName}
-                name="firstName"
-                error={!!touched.firstName && !!errors.firstName}
-                helperText={touched.firstName && errors.firstName}
+                value={values.FirstName}
+                name="FirstName"
+                error={!!touched.FirstName && !!errors.FirstName}
+                helperText={touched.FirstName && errors.FirstName}
                 sx={{ gridColumn: "span 2" }}
               />
               <TextField
@@ -75,23 +91,23 @@ const Form = () => {
                 label="Last Name"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.lastName}
-                name="lastName"
-                error={!!touched.lastName && !!errors.lastName}
-                helperText={touched.lastName && errors.lastName}
+                value={values.LastName}
+                name="LastName"
+                error={!!touched.LastName && !!errors.LastName}
+                helperText={touched.LastName && errors.LastName}
                 sx={{ gridColumn: "span 2" }}
               />
               <TextField
                 fullWidth
                 variant="filled"
-                type="text"
+                type="email"
                 label="Email"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.email}
-                name="email"
-                error={!!touched.email && !!errors.email}
-                helperText={touched.email && errors.email}
+                value={values.Email}
+                name="Email"
+                error={!!touched.Email && !!errors.Email}
+                helperText={touched.Email && errors.Email}
                 sx={{ gridColumn: "span 4" }}
               />
               <TextField
@@ -102,24 +118,12 @@ const Form = () => {
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.password}
-                name="password"
-                error={!!touched.password && !!errors.password}
-                helperText={touched.password && errors.password}
+                name="Password"
+                error={!!touched.Password && !!errors.Password}
+                helperText={touched.Password && errors.Password}
                 sx={{ gridColumn: "span 4" }}
               />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Contact Number"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.contact}
-                name="contact"
-                error={!!touched.contact && !!errors.contact}
-                helperText={touched.contact && errors.contact}
-                sx={{ gridColumn: "span 4" }}
-              />
+             
               <TextField
                 fullWidth
                 variant="filled"
@@ -127,16 +131,16 @@ const Form = () => {
                 label="Website"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.website}
-                name="website"
-                error={!!touched.website && !!errors.website}
-                helperText={touched.website && errors.website}
+                value={values.Website}
+                name="Website"
+                error={!!touched.Website && !!errors.Website}
+                helperText={touched.Website && errors.Website}
                 sx={{ gridColumn: "span 4" }}
               />
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
               <Button type="submit" color="secondary" variant="contained"  style={{  backgroundColor:"#013A63",marginTop: "84px", width:"200px",color:"white" , height:"45px",fontSize:"15px"}}>
-              <a href="/">  Open Website</a> 
+              <a href=""> Open Website</a> 
               </Button>
             </Box>
           </form>
@@ -169,4 +173,5 @@ const initialValues = {
 };
 
 export default Form;
+
 
