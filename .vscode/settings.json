@@ -1,0 +1,6 @@
+{
+    "typescript.tsserver.enableTracing": true,
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+    "js/ts.implicitProjectConfig.experimentalDecorators": true,
+    "js/ts.implicitProjectConfig.checkJs": true
+}

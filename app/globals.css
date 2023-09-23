@@ -86,13 +86,10 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* color: rgb(var(--foreground-rgb)); */
+  background-color: whitesmoke;
+  font-family: sans-serif;
+
 }
 
 a {
@@ -103,5 +100,44 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+
+
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.square1,
+.square2,
+.square3 {
+  border: 1px solid #014F86;
+  border-radius: 5px;
+  width: 350px;
+  padding: 10px;
+  background-color: white;
+  color: #014F86;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .square1,
+  .square2,
+  .square3 {
+    width: 100%;
+    margin-right: 0;
   }
 }
